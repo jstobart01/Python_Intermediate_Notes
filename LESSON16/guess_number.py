@@ -1,6 +1,6 @@
 import sys
 import random
-from enum import Enum
+# from enum import Enum
 
 
 def guess_number(name = 'PlayerOne'):
@@ -13,7 +13,7 @@ def guess_number(name = 'PlayerOne'):
         nonlocal game_count
         
 
-        playerchoice = input(f"\n{name}, guess which number I'm thinking of... 1, 2, or 3.")
+        playerchoice = input(f"\n{name}, guess which number I'm thinking of... 1, 2, or 3.\n")
 
         if playerchoice not in ["1", "2", "3"]:
             print(f"{name}, please enter 1, 2, or 3.")
@@ -43,11 +43,12 @@ def guess_number(name = 'PlayerOne'):
 
         print(f"\nGame count: {game_count}")
         print(f"\n{name}'s wins: {player_wins}")
+        print(f"\nYour winning percentage: {player_wins / game_count:.2%}")
 
         print(f"\nPlay again, {name}?")
 
         while True:
-            playagain = input("\nY for yes or \nQ to Quit")
+            playagain = input("\nY for yes or \nQ to Quit\n")
             if playagain.lower() not in ["y", "q"]:
                 continue
             else:
@@ -57,10 +58,12 @@ def guess_number(name = 'PlayerOne'):
             return play_guess_number()
         else:
             print("\nThank you for playing!\n")
-            sys.exit(f"Bye! {name}!")
+            if __name__ == "__main__":
+                sys.exit(f"Bye! {name}! 👏")
+            else:
+                return
 
     return play_guess_number
-
 
 if __name__ == "__main__":
     import argparse

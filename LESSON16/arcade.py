@@ -1,46 +1,54 @@
-from guess_number import number_guess
-# import rps
-# import sys
+from guess_number import guess_number
+from rps import rps
+import sys
 
 # This function greets the player and asks which game they would like to play.
 
 # Currently the funciton doesn't start the game
 
+def greeting(name = "PlayerOne"):
+    welcome_back = False
 
-number_guess()
-# def greeting(name):
-#     msg = f"Hello {name}!"
-#     print(msg)
-#     print(f"\nWhich game would you like to play {name}?")
+    msg = f"Hello {name}!"
+    print(msg)
+    print(f"\nWhich game would you like to play?")
 
-#     while True:
-#         game_choice = input("\nG for 'Number Guess' or \nR for 'Rock, Paper, Scissors' or\nQ for quit")
-#         if game_choice.lower() not in ["g", "r", "q"]:
-#             continue
-#         else:
-#             break
+    while True:
+        if welcome_back == True:
+            print(f"\n{name}, welcome back to the Arcade menu.")
 
-#     if game_choice.lower() == "g":
-#         guess_number.number_guess
-#     elif game_choice.lower() == "r":
-#         rps.rps()
-#     else:
-#         print("Thank you for playing!\n")
-#         sys.exit(f"Bye! {name}!")
+        game_choice = input("\nG for 'Number Guess' or \nR for 'Rock, Paper, Scissors' or\nQ for quit")
 
+        if game_choice.lower() not in ["g", "r", "q"]:
+            print(f"{name}, please enter 'G', 'R', or 'Q'.")
+            return greeting(name)
 
+        welcome_back = True
 
-# if __name__ == '__main__':
-#     import argparse
+# Determines what game the player chose and calls that game function
 
-#     parser = argparse.ArgumentParser(
-#         description="Provides a personal greeting."
-#     )
+        if game_choice.lower() == "g":
+            number_guess_game = guess_number(name)
+            number_guess_game()
+        elif game_choice.lower() == "r":
+            rock_paper_scissors = rps(name)
+            rock_paper_scissors()
+        else:
+            print("\nThank you for playing!\n")
+            sys.exit(f"Bye! {name}!")
+    
+    
+if __name__ == '__main__':
+    import argparse
 
-#     parser.add_argument(
-#         "-n", "--name", metavar="name", required=True, help="The name of the person to greet."
-#     )
+    parser = argparse.ArgumentParser(
+        description="Provides a personal greeting."
+    )
 
-#     args = parser.parse_args()
+    parser.add_argument(
+        "-n", "--name", metavar="name", required=True, help="The name of the person to greet."
+    )
 
-#     greeting(args.name)
+    args = parser.parse_args()
+
+    greeting(args.name)
