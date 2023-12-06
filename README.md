@@ -57,3 +57,13 @@ $ py -m install -U {package name}
 5. To uninstall a package
 $ py -m uninstall {package name}
 
+6. To see details about a package
+$ py -m pip show requests
+
+7. To create a list of requirements
+$ py -m pip freeze > requirements.txt
+
+Virtual Enviroment
+$ py -m venv .venv (creates the virtual environment)
+$ source .venv/Scripts/activate (activates the virtual enviroment)
+$ deactivate (deactivates the virtual environment)
