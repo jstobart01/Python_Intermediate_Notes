@@ -67,3 +67,5 @@ Virtual Enviroment
 $ py -m venv .venv (creates the virtual environment)
 $ source .venv/Scripts/activate (activates the virtual enviroment)
 $ deactivate (deactivates the virtual environment)
+
+Never include the API_KEY in your development files.
