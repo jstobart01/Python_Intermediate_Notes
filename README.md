@@ -69,3 +69,8 @@ $ source .venv/Scripts/activate (activates the virtual enviroment)
 $ deactivate (deactivates the virtual environment)
 
 Never include the API_KEY in your development files.
+### LESSON 22 - File Operations
+R - Read
+A - Append
+W - Write (Overwrite)
+X - Create
