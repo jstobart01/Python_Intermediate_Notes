@@ -68,9 +68,21 @@ $ py -m venv .venv (creates the virtual environment)
 $ source .venv/Scripts/activate (activates the virtual enviroment)
 $ deactivate (deactivates the virtual environment)
 
-Never include the API_KEY in your development files.
+Never include the API_KEY in your development files. (should be inside your .env file)
 ### LESSON 22 - File Operations
 R - Read
 A - Append
 W - Write (Overwrite)
 X - Create
+
+### LESSON 23 - Final Project
+Static folder: holds any static file (e.g. CSS, JS, images etc.)
+Templates: stores the HTML files
+
+HTML Tip for VSCode: On a new html file type ! and then hit tab. This will auto-generate a skeleton for an HTML file.
+
+For this project I used Flask.
+- To install Flask use $ py -m pip install Flask
+- You can also install multiple packages by doing something like this $ py -m pip install requests python-dotenv Flask
+
+Tip: If you install a new package don't forget to re-create a new requirements file (i.e. pip freeze > requirements.txt). This will update the current one.
